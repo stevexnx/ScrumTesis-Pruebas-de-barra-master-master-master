@@ -1,0 +1,12 @@
+<div class="empty">
+  <nz-empty [nzNotFoundContent]="contentTpl" [nzNotFoundFooter]="footerTpl">
+    <ng-template #contentTpl>
+      <span> Selecciona un proyecto o </span>
+    </ng-template>
+    <ng-template #footerTpl>
+      <button nz-button nzType="primary" routerLink="/projects/new">
+        Crea un proyecto nuevo
+      </button>
+    </ng-template>
+  </nz-empty>
+</div>

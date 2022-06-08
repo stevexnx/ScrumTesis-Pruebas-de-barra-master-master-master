@@ -1,0 +1,34 @@
+<nz-layout class="app-layout">
+  <nz-header>
+    <app-navigation-toolbar
+      [projects$]="projects$"
+      [currentUser]="currentUser$ | async"
+    ></app-navigation-toolbar>
+  </nz-header>
+  <nz-layout>
+    <nz-sider
+      class="menu-sidebar"
+      nzCollapsible
+      nzWidth="256px"
+      nzBreakpoint="xl"
+      nzTheme="light"
+      [(nzCollapsed)]="isSidebarCollapsed"
+      (nzCollapsedChange)="onSidebarCollapsed($event)"
+    >
+    
+      <app-navigation-sidebar></app-navigation-sidebar>
+     
+    </nz-sider>
+    
+    <nz-layout>
+      <nz-content>
+        <app-barra></app-barra>
+        <router-outlet></router-outlet>
+      </nz-content>
+     
+      >
+    </nz-layout>
+  </nz-layout>
+</nz-layout>
+
+<app-svg-definitions></app-svg-definitions>

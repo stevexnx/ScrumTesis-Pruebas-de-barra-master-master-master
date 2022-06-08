@@ -1,0 +1,17 @@
+.kanban {
+  display: inline-flex;
+  width: 100%;
+  padding: 16px 24px;
+
+  .kanban-column {
+    width: 25%;
+    padding: 0.75rem /* 12px */;
+    margin-left: 0.75rem;
+    border-radius: 0.375rem;
+    background-color: rgb(238,238,238);
+
+    &:first-of-type {
+      margin-left: 0;
+    }
+  }
+}

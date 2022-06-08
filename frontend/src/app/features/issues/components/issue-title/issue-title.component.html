@@ -1,0 +1,21 @@
+<nz-form-item>
+  <nz-form-control [nzErrorTip]="summaryErrorTempl">
+    <textarea
+      cdkTextareaAutosize
+      [formControl]="titleControl"
+      (blur)="onBlur()"
+      (focus)="onFocus()"
+      rows="1"
+      required
+      minlength="5"
+    ></textarea>
+    <ng-template #summaryErrorTempl let-control>
+      <ng-container *ngIf="control.hasError('required')">
+        El campo no puede estar vacio
+      </ng-container>
+      <ng-container *ngIf="control.hasError('minlength')">
+        Debe contener al menos 5 caracteres
+      </ng-container>
+    </ng-template>
+  </nz-form-control>
+</nz-form-item>

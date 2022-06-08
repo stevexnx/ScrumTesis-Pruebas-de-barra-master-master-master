@@ -1,0 +1,16 @@
+<nz-page-header class="site-page-header" nzTitle="Area de Tareas">
+  <nz-breadcrumb
+    nz-page-header-breadcrumb
+    *ngIf="currentProject$ | async as project"
+  >
+    <nz-breadcrumb-item
+      ><a routerLink="/projects/all">Proyectos</a></nz-breadcrumb-item
+    >
+    <nz-breadcrumb-item>
+      <a routerLink="/board">{{ project.name }}</a>
+    </nz-breadcrumb-item>
+    <nz-breadcrumb-item>Tabla {{ project.key | uppercase }}</nz-breadcrumb-item>
+  </nz-breadcrumb>
+
+  
+</nz-page-header>

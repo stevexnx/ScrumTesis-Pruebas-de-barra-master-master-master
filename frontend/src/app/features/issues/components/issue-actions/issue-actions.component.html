@@ -1,0 +1,38 @@
+<app-button
+  nz-dropdown
+  nzTrigger="click"
+  [nzDropdownMenu]="menu"
+  [nzOverlayStyle]="{ 'min-width': '176px' }"
+  nzPlacement="bottomRight"
+  icon="more-horiz"
+  [iconSize]="20"
+  [className]="'btn-empty'"
+  nz-tooltip
+  nzTooltipTitle="Accion"
+>
+</app-button>
+
+<nz-dropdown-menu #menu="nzDropdownMenu">
+  <ul nz-menu>
+    <li nz-menu-item class="toggle-on-hover">
+      <app-svg-icon name="file-move" [size]="20"></app-svg-icon>
+      <span>Mover</span>
+      <span class="not-implemented">Not implementado</span>
+    </li>
+    <li nz-menu-item class="toggle-on-hover">
+      <app-svg-icon name="file-copy" [size]="20"></app-svg-icon>
+      <span>Clonar</span>
+      <span class="not-implemented">Not implementado</span>
+    </li>
+    <li nz-menu-item (click)="onDeleteIssue(templContent)">
+      <app-svg-icon name="file-delete" [size]="20"></app-svg-icon>Borrar
+    </li>
+  </ul>
+</nz-dropdown-menu>
+
+<ng-template #templContent>
+  <p>
+    Esta seguro que desea eliminar este comentario ?
+  </p>
+  <p>Si no esta seguro presione cancelar.</p>
+</ng-template>
